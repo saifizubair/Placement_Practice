@@ -1,0 +1,39 @@
+package com.company;
+
+import java.io.InputStreamReader;
+import java.util.Scanner;
+import java.util.Stack;
+import java.io.*;
+
+public class Main {
+    static void swap(int arr[],int i ,int j){
+        int temp =arr[i];
+        arr[i]=arr[j];
+        arr[j]=temp;
+
+    }
+    public static void bubble_sort(int arr[],int n){
+        int counter =1;
+        while (counter<n){
+            for (int i=0;i<n-counter;i++){
+                if (arr[i]>arr[i+1]){
+                    swap(arr,i,i+1);
+                }
+            }
+            counter++;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+        int n =sc.nextInt();
+        int arr[]=new int[n];
+        for (int i=0;i<n;i++){
+            arr[i]=sc.nextInt();
+        }
+        bubble_sort(arr, arr.length);
+       for(int i:arr){
+           System.out.print(i+" ");
+       }
+
+    }
+    }
